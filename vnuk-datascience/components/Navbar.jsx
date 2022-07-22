@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-scroll";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import Image from "next/image";
-import Logo from '../public/vnuk-official.png'
+import Logo from "../public/vnuk-official.png";
 
 function Navbar() {
-  const router = useRouter()
-
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
@@ -19,13 +18,13 @@ function Navbar() {
                 <Image
                   src={Logo}
                   // check if the image is loaded before rendering
-                  onClick={() => router.reload('/')}
+                  onClick={() => router.reload("/")}
                 />
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
-                    onClick={() => router.push('/')}
+                    onClick={() => router.push("/")}
                     href="/"
                     activeClass="Home"
                     to="Home"
@@ -37,7 +36,7 @@ function Navbar() {
                     HOME
                   </Link>
                   <Link
-                    onClick={() => router.push('/about')}
+                    onClick={() => router.push("/about")}
                     href="/about"
                     activeClass="About"
                     to="about"
@@ -49,7 +48,7 @@ function Navbar() {
                     ABOUT
                   </Link>
                   <Link
-                    onClick={() => router.push('/coding')}
+                    onClick={() => router.push("/coding")}
                     href="/coding"
                     activeClass="Coding"
                     to="coding"
@@ -62,7 +61,7 @@ function Navbar() {
                   </Link>
 
                   <Link
-                    onClick={() => router.push('/mini-story')}
+                    onClick={() => router.push("/mini-story")}
                     href="/mini-story"
                     activeClass="Mini-story"
                     to="mini-story"
@@ -75,7 +74,7 @@ function Navbar() {
                   </Link>
 
                   <Link
-                    onClick={() => router.push('/contact')}
+                    onClick={() => router.push("/contact")}
                     href="/contact"
                     activeClass="Contact"
                     to="contact"
@@ -152,7 +151,7 @@ function Navbar() {
                 className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
               >
                 <Link
-                  onClick={() => router.push('/')}
+                  onClick={() => router.push("/")}
                   href="/"
                   activeClass="home"
                   to="home"
@@ -164,7 +163,7 @@ function Navbar() {
                   Home
                 </Link>
                 <Link
-                  onClick={() => router.push('/about')}
+                  onClick={() => router.push("/about")}
                   href="/about"
                   activeClass="about"
                   to="about"
@@ -177,7 +176,7 @@ function Navbar() {
                 </Link>
 
                 <Link
-                  onClick={() => router.push('/coding')}
+                  onClick={() => router.push("/coding")}
                   href="/coding"
                   activeClass="Coding"
                   to="coding"
@@ -189,7 +188,7 @@ function Navbar() {
                   Coding
                 </Link>
                 <Link
-                  onClick={() => router.push('/mini-story')}
+                  onClick={() => router.push("/mini-story")}
                   href="/mini-story"
                   activeClass="Mini-story"
                   to="mini-story"
@@ -202,7 +201,7 @@ function Navbar() {
                 </Link>
 
                 <Link
-                  onClick={() => router.push('/contact')}
+                  onClick={() => router.push("/contact")}
                   href="/contact"
                   activeClass="Contact"
                   to="contact"
