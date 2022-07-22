@@ -16,7 +16,7 @@ const AppComponent: FC<{ Component: any; pageProps: any }> = ({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <AppComponent {...{ Component, pageProps }} />;
+      <AppComponent {...{ Component, pageProps }} />
     </Provider>
   );
 }
