@@ -2,9 +2,7 @@ import { FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { IconContext } from "react-icons";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import WhiteLogo from "../../../public/assets/images/vnuk-white.png";
 
 const AppFooter: FC = () => {
@@ -46,19 +44,25 @@ const AppFooter: FC = () => {
                 <IconContext.Provider value={{ color: "#4267B2" }}>
                   <FaFacebook className="text-4xl cursor-pointer" />
                 </IconContext.Provider>
-                <span className="text-white text-base font-semibold mx-4 hover:text-blue-400">FACEBOOK</span>
+                <span className="text-white text-base font-semibold mx-4 hover:text-blue-400">
+                  FACEBOOK
+                </span>
               </li>
               <li className="flex flex-row items-center pb-6 font-semibold cursor-pointer">
                 <IconContext.Provider value={{ color: "#E1306C" }}>
                   <FaInstagram className="text-4xl cursor-pointer" />
                 </IconContext.Provider>
-                <span className="text-white text-base font-semibold mx-4 hover:text-pink-400">INSTAGRAM</span>
+                <span className="text-white text-base font-semibold mx-4 hover:text-pink-400">
+                  INSTAGRAM
+                </span>
               </li>
               <li className="flex flex-row items-center pb-6 font-semibold cursor-pointer">
                 <IconContext.Provider value={{ color: "#FF0000" }}>
                   <FaYoutube className="text-4xl cursor-pointer" />
                 </IconContext.Provider>
-                <span className="text-white text-base font-semibold mx-4 hover:text-red-400">YOUTUBE</span>
+                <span className="text-white text-base font-semibold mx-4 hover:text-red-400">
+                  YOUTUBE
+                </span>
               </li>
             </ul>
           </div>
@@ -70,7 +74,7 @@ const AppFooter: FC = () => {
         </div>
       </div>
     </>
-  )
+  );
 };
 
 export default AppFooter;
