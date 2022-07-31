@@ -19,7 +19,7 @@ const AppFooter: FC = () => {
                 <Image
                   src={WhiteLogo}
                   // check if the image is loaded before rendering
-                  onClick={() => router.reload("/")}
+                  onClick={() => router.reload()}
                 />
               </div>
             </ul>
@@ -46,19 +46,25 @@ const AppFooter: FC = () => {
                 <IconContext.Provider value={{ color: "#4267B2" }}>
                   <FaFacebook className="text-4xl cursor-pointer" />
                 </IconContext.Provider>
-                <span className="text-white text-base font-semibold mx-4 hover:text-blue-400">FACEBOOK</span>
+                <span className="text-white text-base font-semibold mx-4 hover:text-blue-400">
+                  FACEBOOK
+                </span>
               </li>
               <li className="flex flex-row items-center pb-6 font-semibold cursor-pointer">
                 <IconContext.Provider value={{ color: "#E1306C" }}>
                   <FaInstagram className="text-4xl cursor-pointer" />
                 </IconContext.Provider>
-                <span className="text-white text-base font-semibold mx-4 hover:text-pink-400">INSTAGRAM</span>
+                <span className="text-white text-base font-semibold mx-4 hover:text-pink-400">
+                  INSTAGRAM
+                </span>
               </li>
               <li className="flex flex-row items-center pb-6 font-semibold cursor-pointer">
                 <IconContext.Provider value={{ color: "#FF0000" }}>
                   <FaYoutube className="text-4xl cursor-pointer" />
                 </IconContext.Provider>
-                <span className="text-white text-base font-semibold mx-4 hover:text-red-400">YOUTUBE</span>
+                <span className="text-white text-base font-semibold mx-4 hover:text-red-400">
+                  YOUTUBE
+                </span>
               </li>
             </ul>
           </div>
@@ -70,7 +76,7 @@ const AppFooter: FC = () => {
         </div>
       </div>
     </>
-  )
+  );
 };
 
 export default AppFooter;
