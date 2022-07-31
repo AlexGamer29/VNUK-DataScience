@@ -2,9 +2,7 @@ import { FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { IconContext } from "react-icons";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import WhiteLogo from "../../../public/assets/images/vnuk-white.png";
 
 const AppFooter: FC = () => {

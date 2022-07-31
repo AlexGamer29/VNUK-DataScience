@@ -1,4 +1,4 @@
-export class Post {
+export interface Post {
   _id: string;
   _createdAt: string;
   title: string;
@@ -15,5 +15,5 @@ export class Post {
   slug: {
     current: string;
   };
-  body: Record<string, any>[];
+  body: [object];
 }

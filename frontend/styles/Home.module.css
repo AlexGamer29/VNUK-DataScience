@@ -1,9 +1,9 @@
 .container {
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
 }
 
 .page__layout {
-  height: 300vh;
+  height: 250vh;
 }
 
 .main {
