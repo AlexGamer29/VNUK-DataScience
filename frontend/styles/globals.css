@@ -8,6 +8,11 @@
   src: url("/public/font/FontsFree-Net-NewYorkSmallRegular.ttf");
 }
 
+@font-face {
+  font-family: newyork-bold;
+  src: url("/public/font/NewYorkExtraLargeBlack.otf");
+}
+
 html,
 body {
   padding: 0;
@@ -26,6 +31,11 @@ a {
 
 .myFirstFont {
   font-family: myFirstFont;
+}
+
+.newyork-bold {
+  font-family: newyork-bold;
+  font-weight: bold;
 }
 
 

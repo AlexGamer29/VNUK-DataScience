@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:prod-env": "APP_ENV=prod next dev",
+    "dev:dev-env": "APP_ENV=dev next dev",
     "build": "next build",
     "start": "next start",
     "eslint-check": "eslint --print-config path/to/main.js | eslint-config-prettier-check",

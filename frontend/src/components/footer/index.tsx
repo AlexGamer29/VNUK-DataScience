@@ -9,7 +9,7 @@ const AppFooter: FC = () => {
   const router = useRouter();
   return (
     <>
-      <div className="flex w-full flex-col pt-12 pb-8 px-12 bg-vnuk-blue shadow-2xl">
+      <div className="flex w-full flex-col pt-12 pb-8 px-12 bg-[#000] shadow-2xl">
         <div className="h-1/2 w-full flex md:flex-row flex-col justify-around items-center">
           <div className="p-5">
             <ul>
