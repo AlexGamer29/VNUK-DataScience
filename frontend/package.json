@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
+    "@portabletext/to-html": "^1.0.3",
     "@reduxjs/toolkit": "^1.8.0",
     "@sanity/image-url": "^1.0.1",
     "husky": "^8.0.1",

@@ -1,30 +1,26 @@
 import type { NextPage } from "next";
-import Image from "next/image";
-import MainLayout from "@src/layouts/main";
-import { sanityClient, urlFor } from "../config/sanity";
-import { Post } from "../config/typings";
+import { GetServerSidePropsContext } from "next";
 import Link from "next/link";
-import HomeBanner from "@/public/assets/images/home-banner.png";
+import MainLayout from "@src/layouts/main";
+import { sanityClient, urlFor } from "@/src/config/sanity";
+import { Post } from "@/src/config/typings";
+import { toHTML } from "@portabletext/to-html";
+
 interface PageProps {
+  post: Post;
   posts: Post[];
+  title: string;
 }
 
-const Home: NextPage<PageProps> = ({ posts }) => {
-  console.log(posts);
+const PostPage: NextPage<PageProps> = ({ posts, post }) => {
   return (
     <MainLayout>
       <div className="md:max-w-[900px] mx-auto py-[30px] md:pt-[30px] pt-0">
         <div className="flex w-full flex-col items-center pb-10">
-          <Image src={HomeBanner} className="h-full object-contain"></Image>
-        </div>
-        <div className="flex w-full flex-col items-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-center text-black pb-5 newyork-bold">
-            A few words about this blog platform, VNUK Data Science, and how
-            this site was made
-          </h1>
-          <h1 className="text-xl font-normal text-center text-vnuk-blue">
-            Why you choose instead of other blog websites
-          </h1>
+          <img
+            src={urlFor(post.mainImage).url()!}
+            className="h-full object-contain"
+          />
         </div>
         <div className="flex flex-col items-center py-14">
           <div className="w-1/2 divide-y-2 divide-black">
@@ -32,6 +28,16 @@ const Home: NextPage<PageProps> = ({ posts }) => {
             <div></div>
           </div>
         </div>
+        <div
+          className="w-full"
+          dangerouslySetInnerHTML={{
+            __html: toHTML(post?.body, {
+              components: {
+                /* optional object of custom components to use */
+              },
+            }),
+          }}
+        ></div>
         <div className="flex w-full flex-col items-center">
           <h1 className="text-4xl w-1/2 font-bold text-center text-vnuk-red pb-10">
             All articles
@@ -61,10 +67,13 @@ const Home: NextPage<PageProps> = ({ posts }) => {
   );
 };
 
-export default Home;
+export default PostPage;
 
-export const getServerSideProps = async () => {
-  const query = `*[_type == "post"]{
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const title = context?.query?.title;
+  const postDetailQuery = `*[_type == "post" && slug.current=="${title}"]{
     _id,
     title,
    author -> {
@@ -74,13 +83,31 @@ export const getServerSideProps = async () => {
     description,
     mainImage,
     slug,
+    body
   }`;
 
-  const posts: Post[] = await sanityClient.fetch(query);
+  const postsDetail: Post[] = await sanityClient.fetch(postDetailQuery);
+
+  const postsQuery = `*[_type == "post"]{
+    _id,
+    title,
+   author -> {
+      name,
+      image
+  },
+    description,
+    mainImage,
+    slug,
+    body
+  }`;
+
+  const posts: Post[] = await sanityClient.fetch(postsQuery);
 
   return {
     props: {
+      post: postsDetail.length > 0 ? postsDetail[0] : null,
       posts,
+      title,
     },
   };
 };
