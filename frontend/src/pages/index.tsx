@@ -10,7 +10,6 @@ interface PageProps {
 }
 
 const Home: NextPage<PageProps> = ({ posts }) => {
-  console.log(posts);
   return (
     <MainLayout>
       <div className="md:max-w-[1500px] mx-auto py-[30px] md:pt-[30px] pt-0">

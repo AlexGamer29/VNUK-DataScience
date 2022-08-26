@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: newyorkmedium;
+  src: url(../public/font/new-york/NewYorkMediumSemibold.otf)
+}
 
 html,
 body {
@@ -141,4 +145,9 @@ a {
 #nav-icon2.open span:nth-child(6) {
   left: calc(50% - 5px);
   top: 26px;
+}
+
+
+.newyorkmedium {
+  font-family: newyorkmedium;
 }

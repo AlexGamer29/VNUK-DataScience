@@ -18,7 +18,6 @@ const AppHeader: FC = () => {
     () => [
       { title: "HOME", slug: "/" },
       { title: "CODING", slug: "/" },
-      { title: "MINI STORY", slug: "/" },
       { title: "ABOUT", slug: "/about" },
     ],
     []
@@ -37,9 +36,10 @@ const AppHeader: FC = () => {
             <div className="flex items-center mx-20 justify-between w-full">
               <div className="flex justify-center items-center w-48">
                 <Image
+                  className="cursor-pointer"
                   src={Logo}
                   // check if the image is loaded before rendering
-                  onClick={() => router.reload()}
+                  onClick={() => router.push("/")}
                 />
               </div>
               <div className="hidden md:block">
@@ -63,14 +63,6 @@ const AppHeader: FC = () => {
               </div>
             </div>
             <div className="mr-10 flex md:hidden ">
-              {/* <button
-                onClick={() => setIsOpen(!isOpen)}
-                type="button"
-                className="bg-vnuk-blue inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-vnuk-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-vnuk-blue focus:ring-white"
-                aria-controls="mobile-menu"
-                aria-expanded="false"
-              >
-              </button> */}
               <div id="nav-icon2" onClick={handleOpenMobileMenu}>
                 <span></span>
                 <span></span>
