@@ -16,6 +16,9 @@ module.exports = {
       lineHeight: {
         12: "4rem",
       },
+      gap: {
+        "-11": "-2.75rem",
+      },
     },
   },
   plugins: [],

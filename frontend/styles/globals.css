@@ -3,16 +3,6 @@
 @tailwind utilities;
 
 
-@font-face {
-  font-family: myFirstFont;
-  src: url("/public/font/FontsFree-Net-NewYorkSmallRegular.ttf");
-}
-
-@font-face {
-  font-family: newyork-bold;
-  src: url("/public/font/NewYorkExtraLargeBlack.otf");
-}
-
 html,
 body {
   padding: 0;
@@ -29,15 +19,30 @@ a {
   box-sizing: border-box;
 }
 
-.myFirstFont {
-  font-family: myFirstFont;
+.montserrat-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
-.newyork-bold {
-  font-family: newyork-bold;
-  font-weight: bold;
+.montserrat-semibold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
+.roboto-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.roboto-regular {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.roboto-light {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
 
 #nav-icon2 {
   width: 35px;

@@ -15,7 +15,7 @@ interface PageProps {
 const PostPage: NextPage<PageProps> = ({ posts, post }) => {
   return (
     <MainLayout>
-      <div className="md:max-w-[900px] mx-auto py-[30px] md:pt-[30px] pt-0">
+      <div className="md:max-w-[1000px] mx-auto py-[30px] md:pt-[30px] pt-0">
         <div className="flex w-full flex-col items-center pb-10">
           <img
             src={urlFor(post.mainImage).url()!}

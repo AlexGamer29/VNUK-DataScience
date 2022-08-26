@@ -13,16 +13,16 @@ const Home: NextPage<PageProps> = ({ posts }) => {
   console.log(posts);
   return (
     <MainLayout>
-      <div className="md:max-w-[900px] mx-auto py-[30px] md:pt-[30px] pt-0">
+      <div className="md:max-w-[1500px] mx-auto py-[30px] md:pt-[30px] pt-0">
         <div className="flex w-full flex-col items-center pb-10">
           <Image src={HomeBanner} className="h-full object-contain"></Image>
         </div>
         <div className="flex w-full flex-col items-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-center text-black pb-5 newyork-bold">
+          <h1 className="text-3xl md:text-5xl font-bold text-center text-vnuk-red pb-5 roboto-bold">
             A few words about this blog platform, VNUK Data Science, and how
             this site was made
           </h1>
-          <h1 className="text-xl font-normal text-center text-vnuk-blue">
+          <h1 className="text-xl font-normal text-center text-vnuk-blue roboto-regular">
             Why you choose instead of other blog websites
           </h1>
         </div>
@@ -49,7 +49,7 @@ const Home: NextPage<PageProps> = ({ posts }) => {
                 />
                 <div className="flex justify-center p-5">
                   <div>
-                    <p className="text-2xl font-light">{post.title}</p>
+                    <p className="text-xl montserrat-regular">{post.title}</p>
                   </div>
                 </div>
               </div>

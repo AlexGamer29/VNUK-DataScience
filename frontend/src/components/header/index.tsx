@@ -16,10 +16,10 @@ const AppHeader: FC = () => {
 
   const menuData = useMemo<MenuItem[]>(
     () => [
-      { title: "Blog", slug: "/" },
-      { title: "About", slug: "/" },
-      { title: "Links", slug: "/" },
-      { title: "Products", slug: "/" },
+      { title: "HOME", slug: "/" },
+      { title: "CODING", slug: "/" },
+      { title: "MINI STORY", slug: "/" },
+      { title: "ABOUT", slug: "/about" },
     ],
     []
   );
@@ -46,14 +46,14 @@ const AppHeader: FC = () => {
                 <div className="ml-10 flex items-baseline space-x-4">
                   {menuData.map((item, index) => (
                     <Link
-                      onClick={() => router.push("/")}
+                      onClick={() => router.push(item.slug)}
                       href={item.slug}
                       activeClass="Home"
                       to="Home"
                       smooth={true}
                       offset={50}
                       duration={500}
-                      className="cursor-pointer text-vnuk-blue px-3 py-2 text-md leading-12 transition duration-700 border-b-2 border-transparent hover:border-vnuk-red hover:text-vnuk-red myFirstFont"
+                      className="cursor-pointer text-vnuk-blue px-3 py-2 text-md leading-12 transition duration-700 border-b-2 border-transparent hover:border-vnuk-red hover:text-vnuk-red montserrat-semibold"
                       key={`desktop-menu-item-${index}`}
                     >
                       {item.title}
