@@ -17,7 +17,7 @@ const Home: NextPage<PageProps> = ({ posts }) => {
           <Image src={HomeBanner} className="h-full object-contain"></Image>
         </div>
         <div className="flex w-full flex-col items-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-center text-vnuk-red pb-5 roboto-bold">
+          <h1 className="text-3xl md:text-5xl font-bold text-center text-black pb-5 roboto-bold">
             A few words about this blog platform, VNUK Data Science, and how
             this site was made
           </h1>
@@ -26,17 +26,17 @@ const Home: NextPage<PageProps> = ({ posts }) => {
           </h1>
         </div>
         <div className="flex flex-col items-center py-14">
-          <div className="w-1/2 divide-y-2 divide-black">
+          <div className="w-full divide-y-2 divide-black">
             <div></div>
             <div></div>
           </div>
         </div>
         <div className="flex w-full flex-col items-center">
-          <h1 className="text-4xl w-1/2 font-bold text-center text-vnuk-red pb-10">
+          <h1 className="text-4xl w-1/2 font-bold text-center text-black pb-10">
             All articles
           </h1>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-6 p-2 md:p-6">
           {posts.map((post) => (
             <Link key={post._id} href={`/post/${post.slug.current}`}>
               <div className="drop-shadow-xl group cursor-pointer overflow-hidden">

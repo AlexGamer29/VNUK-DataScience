@@ -30,17 +30,17 @@ const about: NextPage = () => (
         <div className="w-full lg:w-6/12">
           <img
             className="lg:block hidden w-full"
-            src="https://i.ibb.co/RjNH7QB/Rectangle-122-1.png"
+            src="https://vnuk.edu.vn/wp-content/uploads/2022/02/003-scaled.jpg"
             alt="people discussing on board"
           />
           <img
             className="lg:hidden sm:block hidden w-full"
-            src="https://i.ibb.co/16fPqrg/Rectangle-122-2.png"
+            src="https://vnuk.edu.vn/wp-content/uploads/2022/02/003-scaled.jpg"
             alt="people discussing on board"
           />
           <img
             className="sm:hidden block w-full"
-            src="https://i.ibb.co/Jxhpxh6/Rectangle-122.png"
+            src="https://vnuk.edu.vn/wp-content/uploads/2022/02/003-scaled.jpg"
             alt="people discussing on board"
           />
         </div>
@@ -170,29 +170,27 @@ const about: NextPage = () => (
       <div className="grid sm:grid-cols-3 grid-cols-2 sm:gap-8 gap-4">
         <div>
           <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 mt-6">
-            Founded
+            Location
           </p>
           <p className="font-normal text-base leading-6 text-gray-600 mt-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            158a Lê Lợi, Hải Châu 1, Hải Châu, Đà Nẵng 550000
           </p>
         </div>
         <div>
           <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 mt-6">
-            50M montly enrichments
+            Contact
           </p>
           <p className="font-normal text-base leading-6 text-gray-600 mt-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            Số điện thoại: (0236)3.738.399. Đường dây nóng: 0905.55.66.54
           </p>
         </div>
         <div className="sm:block hidden">
           <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 mt-6">
-            400k User
+            Email
           </p>
           <p className="font-normal text-base leading-6 text-gray-600 mt-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            Thông tin tuyển sinh: admission@vnuk.edu.vn. Thông tin chung:
+            contact@vnuk.edu.vn
           </p>
         </div>
       </div>
