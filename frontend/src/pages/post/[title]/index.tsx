@@ -4,7 +4,10 @@ import Link from "next/link";
 import MainLayout from "@src/layouts/main";
 import { sanityClient, urlFor } from "@/src/config/sanity";
 import { Post } from "@/src/config/typings";
-import { toHTML } from "@portabletext/to-html";
+// import { toHTML } from "@portabletext/to-html";
+import PortableText from "react-portable-text";
+import { FacebookIcon, FacebookShareButton, TwitterIcon, TwitterShareButton } from "react-share";
+import { useRouter } from "next/router";
 
 interface PageProps {
   post: Post;
@@ -13,6 +16,8 @@ interface PageProps {
 }
 
 const PostPage: NextPage<PageProps> = ({ posts, post }) => {
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  const router = useRouter();
   return (
     <MainLayout>
       <div className="md:max-w-[1000px] mx-auto py-[30px] md:pt-[30px] pt-0">
@@ -22,22 +27,67 @@ const PostPage: NextPage<PageProps> = ({ posts, post }) => {
             className="h-full object-contain"
           />
         </div>
-        <div className="flex flex-col items-center py-14">
+        {/* <h1 className="font-bold text-5xl">{post.title}</h1> */}
+        <div className="flex flex-col items-center pt-14 pb-5">
           <div className="w-1/2 divide-y-2 divide-black">
             <div></div>
             <div></div>
           </div>
         </div>
-        <div
-          className="w-full"
-          dangerouslySetInnerHTML={{
-            __html: toHTML(post?.body, {
-              components: {
-                /* optional object of custom components to use */
-              },
-            }),
-          }}
-        ></div>
+        <div className="flex items-center space-x-2 mb-5">
+          <img
+            className="h-12 w-12 rounded-full object-cover"
+            src={urlFor(post.author.image).url()!}
+            alt="" />
+          <div className="flex flex-row w-full justify-between">
+            <div className="flex flex-col">
+              <p className="font-bold text-sm">{post.author.name}</p>
+              <p className="font-base text-sm">
+                {new Date(post._createdAt).toLocaleDateString("en-US", options)}
+              </p>
+            </div>
+
+            <div className="flex flex-row space-x-3">
+              <FacebookShareButton url={router.asPath}>
+                <FacebookIcon size={40} round />
+              </FacebookShareButton>
+              <TwitterShareButton url={router.asPath}>
+                <TwitterIcon size={40} round />
+              </TwitterShareButton>
+            </div>
+          </div>
+        </div>
+        <div>
+          <PortableText
+            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+            content={post.body}
+            serializers={{
+              h1: (props: any) => (
+                <h1 className="text-2xl font-bold my-5" {...props} />
+              ),
+              h2: (props: any) => (
+                <h1 className="text-xl font-bold my-5" {...props} />
+              ),
+              li: ({ children }: any) => (
+                <li className="ml-4 list-disc">{children}</li>
+              ),
+              link: ({ href, children }: any) => (
+                <a href={href} className="text-vnuk-blue hover:underline">
+                  {children}
+                </a>
+              ),
+            }}
+          />
+        </div>
+
+        <div className="flex flex-col items-center pt-14 pb-5">
+          <div className="w-1/2 divide-y-2 divide-black">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
         <div className="flex w-full flex-col items-center">
           <h1 className="text-4xl w-1/2 font-bold text-center text-vnuk-red pb-10">
             All articles
@@ -76,6 +126,7 @@ export const getServerSideProps = async (
   const postDetailQuery = `*[_type == "post" && slug.current=="${title}"]{
     _id,
     title,
+    _createdAt,
    author -> {
       name,
       image
